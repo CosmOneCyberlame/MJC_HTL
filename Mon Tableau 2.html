@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Mon Tableau 2
+    </title>
+    <style>
+      tr,td, th{
+        border : 1px solid rgb(247, 164, 101);
+        padding: 15px;
+        width: 89px;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      tr {
+       background-color: rgb(232, 191, 102);
+      }
+    </style>
+  </head>
+    <body>
+      <form>
+      <table>
+      <caption id="Title">
+        Tableau Des Matieres
+      </caption>
+        <tr>
+          <th rowspan="2">
+            Name
+          </th>
+          <th colspan="3">
+            Note
+          </th>
+          <th rowspan="2">
+            Total
+          </th>
+        </tr>
+        <tr>
+        <th>
+          Note de Maths
+        </th>
+        <th>
+          Note de Franc
+        </th>
+        <th>
+          Note de Scien
+        </th>
+        </tr>
+        <tr>
+          <td>
+            Eleve1
+          </td>
+          <td>
+           <input type="number"class="Maths"
+              min="0" max="20"required>
+          </td>
+          <td>
+            <input type="number"class="Franc"
+               min="0" max="20" required>
+           </td>
+           <td>
+            <input type="number"class="Scien"
+               min="0" max="20" required>
+           </td>
+           <td>
+            <input type="number"class="Total" readonly>
+           </td>
+        </tr>
+        <tr>
+          <td>
+            Eleve2
+          </td>
+          <td>
+            <input type="number"class="Maths"
+               min="0" max="20" required>
+           </td>
+          <td>
+            <input type="number"class="Franc"
+              min="0" max="20" required>
+          </td>
+          <td>
+            <input type="number"class="Scien"
+               min="0" max="20" required>
+           </td>
+           <td>
+            <input type="number"class="Total" readonly>
+           </td>
+        </tr>
+      </table>
+      <script>
+        function updatetotal(event){
+          const Input_Cellule = target.event;
+          const ligne = Input_Cellule.closest("tr");
+          const Maths_Input = ligne.querrySelector(".Maths");
+          const Franc_Input = ligne.querrySelector(".Franc");
+          const Scien_Input = ligne.querrySelector(".Scien");
+          const Total_Input = ligne.querrySelector(".Total");
+          const note_Maths = parseFloat(Maths_Input.value)||0;
+          const note_Franc = parseFloat(Franc_Input.value)||0;
+          const note_Scien = parseFloat(Scien_Input.value)||0;
+          const Total = note_Franc + note_Maths + note_Scien;
+          Total_Input.value = total.Fixed(2);
+        }
+        document.querySelectorAll(".Maths,.Franc,.Scien");
+        forEach(input =>{input.addListener("input", updatetotal)
+      })
+      </script>
+    </form>
+    </body>
+</html>
